@@ -3,9 +3,14 @@
  */
 package app.hypermedia.testing.dsl.ide
 
+import app.hypermedia.testing.dsl.ide.editor.contentassist.CoreContentAssist
+import org.eclipse.xtext.ide.editor.contentassist.IdeContentProposalProvider
 
 /**
  * Use this class to register ide components.
  */
 class CoreIdeModule extends AbstractCoreIdeModule {
+    def Class<? extends IdeContentProposalProvider> bindIdeContentProposalProvider() {
+        return CoreContentAssist
+    }
 }
